@@ -1,0 +1,22 @@
+<div>
+  <mat-card>Create Article</mat-card>
+  <br />
+  <mat-card class="width-card">
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Article name" #articleName>
+      </mat-form-field>
+      <br />
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Topic" #articleTopic>
+      </mat-form-field>
+      <br />
+      <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Article text" #articleText style="height:400px"></textarea>
+      </mat-form-field>
+      <br />
+      <button mat-button mat-raised-button matTooltip="Info about the action" aria-label="Button that displays a tooltip when focused or hovered over"
+        (click)="create(articleName.value,articleTopic.value,articleText.value);">Create</button>
+    </form>
+  </mat-card>
+</div>

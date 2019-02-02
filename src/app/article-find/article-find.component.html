@@ -1,0 +1,24 @@
+<mat-card>Find Articles</mat-card>
+<br />
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Type an article name" #searchBox id="search-box" (input)="search(searchBox.value)" >
+  </mat-form-field>
+</form>
+<br />
+<div layout-gt-sm="row" tdMediaToggle="gt-xs">
+  <div flex-gt-sm="40">
+    <mat-card *ngFor="let article of articles$ | async" class="width-card">
+      <mat-card-title>{{article.name}}</mat-card-title>
+      <mat-card-subtitle>{{article.topic}}</mat-card-subtitle>
+      <mat-divider></mat-divider>
+      <mat-card-actions>
+        <a mat-button class="text-upper" routerLink='/article-detail/{{article.id}}'>
+          <span>View More</span>
+        </a>
+      </mat-card-actions>
+      <mat-divider></mat-divider>
+      <mat-divider></mat-divider>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div *ngIf="userService.login">
+  <mat-card>Authorization page</mat-card>
+  <br />
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Login" #login>
+    </mat-form-field>
+    <br />
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Password" type="password" #password>
+    </mat-form-field>
+  </form>
+  <button mat-button mat-raised-button matTooltip="Info about the action" aria-label="Button that displays a tooltip when focused or hovered over"
+    (click)="onLogin(login.value, password.value);">Log in</button>
+</div>

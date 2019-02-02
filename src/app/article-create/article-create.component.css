@@ -1,0 +1,54 @@
+/*button {
+    margin-top: 10px;
+    background-color: #eee;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    cursor: hand;
+    font-family: Arial;
+  }
+   
+  button:hover {
+    background-color: #cfd8dc;
+  }
+   
+  button.delete {
+    position: relative;
+    left: 194px;
+    top: -32px;
+    background-color: gray !important;
+    color: white;
+  }
+
+  label input {
+    border-radius: 6px;
+    margin-top: 10px;
+    width: 300px;
+  }
+  .leff
+  {
+      margin-left: 23px;
+  }
+
+  label textarea {
+    border-radius: 6px;
+    margin-top: 10px;
+    width: 500px; 
+    height: 400px;
+    resize: none;
+  }*/
+
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+  .width-card {
+    max-width: 800px;
+  }

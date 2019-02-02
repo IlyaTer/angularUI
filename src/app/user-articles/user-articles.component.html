@@ -1,0 +1,19 @@
+<mat-card>My Articles</mat-card>
+<br />
+<div layout-gt-sm="row" tdMediaToggle="gt-xs">
+  <div flex-gt-sm="40">
+    <mat-card *ngFor="let article of articles" class="width-card">
+      <mat-card-title>{{article.name}}</mat-card-title>
+      <mat-card-subtitle>{{article.topic}}</mat-card-subtitle>
+      <mat-divider></mat-divider>
+      <mat-card-actions>
+        <a mat-button class="text-upper" routerLink='/article-detail/{{article.id}}'>
+          <span>View More</span>
+        </a>
+      </mat-card-actions>
+      <mat-divider></mat-divider>
+      <mat-divider></mat-divider>
+    </mat-card>
+  </div>
+</div>
+

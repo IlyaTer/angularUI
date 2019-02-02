@@ -1,0 +1,61 @@
+<br />
+<mat-card class="width-card">
+  <mat-card-header>
+    <mat-card-title>{{article.name}}</mat-card-title>
+    <mat-card-subtitle>Topic: {{article.topic}}</mat-card-subtitle>
+    <mat-card-subtitle>Author: {{article.author}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p align="justify">
+      {{article.text}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+  </mat-card-actions>
+</mat-card>
+<br />
+<div *ngIf="userService.user">
+  <div *ngIf="article.author === userService.user.login">
+    <button mat-button mat-raised-button matTooltip="Info about the action" aria-label="Button that displays a tooltip when focused or hovered over"
+      (click)="editArticle(article.id);">Edit</button>
+  </div>
+  <br />
+  <form>
+    <mat-form-field>
+      <input matInput placeholder="Leave a comment" #comment>
+    </mat-form-field>
+    <button mat-button mat-raised-button matTooltip="Info about the action" aria-label="Button that displays a tooltip when focused or hovered over"
+      (click)="addComment(comment.value); comment.value=''">Add Comment</button>
+  </form>
+</div>
+<br />
+<mat-accordion>
+  <mat-expansion-panel class="width-card">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Comments
+      </mat-panel-title>
+      <mat-panel-description>
+        All comments to this article
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-card *ngFor="let comment of comments" class="width-card">
+      <mat-card-title>{{comment.author}}</mat-card-title>
+      <mat-divider></mat-divider>
+      <mat-card-actions>
+        <span>{{comment.text}}</span>
+      </mat-card-actions>
+      <mat-divider></mat-divider>
+      <div *ngIf="userService.user">
+        <div *ngIf="comment.author === userService.user.login">
+          <a mat-button class="text-upper" (click)="removeComment(comment)">
+            <span>Delete</span>
+          </a>
+        </div>
+      </div>
+      <mat-divider></mat-divider>
+      <mat-divider></mat-divider>
+      <br />
+    </mat-card>
+  </mat-expansion-panel>
+</mat-accordion>
